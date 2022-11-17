@@ -48,7 +48,7 @@ public class Candy {
         //# BEGIN TODO: Provide method implementation
 
         //first we check if the devision is possible
-        if(k == 0){
+        if (k == 0) {
             return -1;
         }
         
@@ -58,5 +58,5 @@ public class Candy {
         return result;
     }
 
-}//
+}
 //# END SKELETON

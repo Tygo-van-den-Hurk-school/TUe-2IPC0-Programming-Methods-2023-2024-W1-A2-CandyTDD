@@ -42,16 +42,27 @@ public class CandyTest {
 
     //# BEGIN TODO: Additional test cases
     @Test
-    public void testDivideThatShouldWork() {
+    public void testDivide() {
+        
         check(3, 15, true);
+        check(3, 18, true);
+        check(3, 21, true);
+        check(3, 24, true);
+        check(3, 27, true);
+        check(27, 3, true);
+        
         check(4, 16, true);
-        check(4, 0, true);
-    }
-    
-    @Test
-    public void testDivideThatShouldNotWork() {
-        check(0, 15, false);
-        check(0, 99999, false);
+        check(4, 20, true);
+        check(4, 24, true);
+        check(4, 28, true);
+        check(4, 32, true);
+        check(32, 4, true);
+        
+        check(7, 0, true);
+        check(0, 6, false);
+        check(0, 0, false);
+        check(0, 99999999, false);
+        check(99999999, 99999999, true);
     }
     //# END TODO
 }
