@@ -47,7 +47,7 @@ public class CandyTest {
      * 
      * @param k the amount of kids that want candy
      * @param c the amount of candy
-     * @param outComeExpexted what we expect each child to get
+     * @param expectedResult what we expect each child to get
      */
     public void myOwnCheck(long k, long c, long expectedResult){
         
