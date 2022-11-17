@@ -41,6 +41,10 @@ public class CandyTest {
     }
 
     //# BEGIN TODO: Additional test cases
+    
+    // keeps track of how many times the myOwnCheck method has been run.
+    private int timesRun = 0;
+    
     /**
      * runs the method and then compares the result with,
      * the expected outcome.
@@ -52,14 +56,25 @@ public class CandyTest {
     private void myOwnCheck(long k, long c, long expectedResult){
         
         Candy instance = new Candy();
-        
-        System.out.println("divide(" + k + ", " + c + ")");
         long result = instance.divide(k, c);
-        System.out.println("  result = " + result);
+        String errorMessage = "should be overwritten";
+        
+        // now we increase the amount of times this method has been run.
+        this.timesRun++;
+        
+        // Gives information about the test run
+        System.out.println(
+            "divide method test,\n" +
+            "timesRun         = " + this.timesRun + "\n" + 
+            "amount of kids   = " + k + "\n" +
+            "amount of candy  = " + c + "\n" +
+            "result           = " + result + "\n" +
+            "expectedResult   = " + expectedResult
+        );
         
         // if it is less then 0, that means devicion was not possible, so we check
         if (result < 0) {
-            String errorMessage = messageMakerForBelowZero(expectedResult, result, k, c);
+            errorMessage = messageMakerForBelowZero(expectedResult, result, k, c);
             assertEquals(expectedResult < 0, result < 0, errorMessage);
             return;
         }
@@ -68,9 +83,11 @@ public class CandyTest {
          * if it did not said it was not possible to devide, then we ask it if the devicion
          * was at least done properly. We test the range, outcome, and the expected outcome.
          */
-        assertEquals(expectedResult, result, "expectedResult == result");
-        assertTrue(result <= MAX_VALUE, "range (result <= MAX_VALUE)");
-        assertEquals(result * k, c, "quotient (result * k == c)");
+        errorMessage = ", k = " + k + ", c = " + c + ", result = " + result;
+        assertEquals(expectedResult, result, "no equal" + errorMessage);
+        assertTrue(result <= MAX_VALUE, "result > MAX_VALUE" + errorMessage);
+        assertEquals(result * k, c, "result * k != c" + errorMessage);
+
     }
     
     private String messageMakerForBelowZero(long expectedResult, long result, long k, long c){
@@ -102,15 +119,15 @@ public class CandyTest {
         myOwnCheck(3, 18, 6);
         myOwnCheck(3, 21, 7);
         myOwnCheck(3, 24, 8);
-        myOwnCheck(3, 25, 8);
+        myOwnCheck(3, 25, -13);
         myOwnCheck(27, 3, 0);
 
         // test cases that are a little more "wonky"
         myOwnCheck(7, 0, 0);
-        myOwnCheck(0, 6, -1);
-        myOwnCheck(0, 0, -1);
-        myOwnCheck(0, 99999999, -1);
-        myOwnCheck(99999999, 99999999, 1);
+        myOwnCheck(0, 6, -13);
+        myOwnCheck(0, 0, -13);
+        myOwnCheck(0, 99999999, -13);
+        myOwnCheck(99999999, 99999999, 13);
     }
     //# END TODO
 }
