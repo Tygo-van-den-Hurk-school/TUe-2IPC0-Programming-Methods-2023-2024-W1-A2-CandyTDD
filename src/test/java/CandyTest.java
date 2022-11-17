@@ -78,6 +78,7 @@ public class CandyTest {
      * since we have now tested all the cases, but moto moto want more, 
      * we have written these:
      */
+    
     @Test
     public void extraCaseForMotoMoto0() {
         check(3, 18, true);
@@ -87,55 +88,46 @@ public class CandyTest {
     public void extraCaseForMotoMoto1() {
         check(3, 21, true);
     }
-    
         
     @Test
     public void extraCaseForMotoMoto2() {
         check(3, 27, true);
     }
-    
         
     @Test
     public void extraCaseForMotoMoto3() {
         check(3, 30, true);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto4() {
         check(3, 33, true);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto5() {
         check(3, 36, true);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto6() {
         check(3, 39, true);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto7() {
         check(0, 0, false);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto8() {
         check(0, 18, false);
     }
     
-        
     @Test
     public void extraCaseForMotoMoto9() {
         check(0, 33, false);
     }
-    
         
     @Test
     public void extraCaseForMotoMoto10() {
