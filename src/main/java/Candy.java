@@ -45,7 +45,7 @@ public class Candy {
     static long divide(long k, long c) {
         
         long result; // value to be returned
-//# BEGIN TODO: Provide method implementation
+        //# BEGIN TODO: Provide method implementation
 
         //first we check if the devision is possible
         if(k == 0){
@@ -54,7 +54,7 @@ public class Candy {
         
         result = c / k;
         
-//# END TODO
+        //# END TODO
         return result;
     }
 
