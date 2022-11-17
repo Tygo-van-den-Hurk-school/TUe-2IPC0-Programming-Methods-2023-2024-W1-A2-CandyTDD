@@ -41,28 +41,53 @@ public class CandyTest {
     }
 
     //# BEGIN TODO: Additional test cases
+    /**
+     * runs the method and then compares the result with,
+     * the expected outcome.
+     * 
+     * @param k the amount of kids that want candy
+     * @param c the amount of candy
+     * @param outComeExpexted what we expect each child to get
+     */
+    public void myOwnCheck(long k, long c, long expectedResult){
+        
+        Candy instance = new Candy();
+        
+        System.out.println("divide(" + k + ", " + c + ")");
+        long result = instance.divide(k, c);
+        System.out.println("  result = " + result);
+        
+        // if it is less then 0, that means devicion was not possible, so we check
+        if (result < 0) {
+            assertEquals(expectedResult < 0, result < 0, "possible (0 <= result)");
+            return;
+        }
+        
+        /*
+         * if it did not said it was not possible to devide, then we ask it if the devicion
+         * was at least done properly. We test the range, outcome, and the expected outcome.
+         */
+        assertEquals(expectedResult, result, "expectedResult == result");
+        assertTrue(result <= MAX_VALUE, "range (result <= MAX_VALUE)");
+        assertEquals(result * k, c, "quotient (result * k == c)");
+    }
+    
     @Test
     public void testDivide() {
         
-        check(3, 15, true);
-        check(3, 18, true);
-        check(3, 21, true);
-        check(3, 24, true);
-        check(3, 27, true);
-        check(27, 3, false);
-        
-        check(4, 16, true);
-        check(4, 20, true);
-        check(4, 24, true);
-        check(4, 28, true);
-        check(4, 32, true);
-        check(32, 4, false);
-        
-        check(7, 0, false);
-        check(0, 6, false);
-        check(0, 0, false);
-        check(0, 99999999, false);
-        check(99999999, 99999999, true);
+        // test cases that should "just work"
+        myOwnCheck(3, 18, 6);
+        myOwnCheck(3, 21, 7);
+        myOwnCheck(3, 24, 8);
+        myOwnCheck(3, 25, 8);
+        myOwnCheck(27, 3, 0);
+
+        // test cases that are a little more "wonky"
+        myOwnCheck(7, 0, 0);
+        myOwnCheck(0, 6, -1);
+        myOwnCheck(0, 0, -1);
+        myOwnCheck(0, 99999999, -1);
+        myOwnCheck(99999999, 99999999, 1);
     }
     //# END TODO
 }
