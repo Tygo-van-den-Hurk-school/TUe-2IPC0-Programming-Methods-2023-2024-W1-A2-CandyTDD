@@ -40,16 +40,19 @@ public class CandyTest {
         check(3, 15, true);
     }
 
-//# BEGIN TODO: Additional test cases
+    //# BEGIN TODO: Additional test cases
     @Test
-    public void testDivide() {
+    public void testDivideThatShouldWork() {
         check(3, 15, true);
-        check(0, 15, false);
         check(4, 16, true);
         check(4, 0, true);
-
     }
-//# END TODO
-
+    
+    @Test
+    public void testDivideThatShouldNotWork() {
+        check(0, 15, false);
+        check(0, 99999, false);
+    }
+    //# END TODO
 }
 //# END SKELETON
