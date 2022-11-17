@@ -57,6 +57,5 @@ public class Candy {
         //# END TODO
         return result;
     }
-
 }
 //# END SKELETON
