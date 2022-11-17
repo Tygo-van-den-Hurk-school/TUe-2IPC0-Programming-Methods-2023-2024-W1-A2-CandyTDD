@@ -51,7 +51,7 @@ public class Candy {
         if (k == 0 && c != 0) {
             return 0;
             
-        } else if (k == 0 || c%k != 0) {
+        } else if (k == 0 || c % k != 0) {
             return -13;
         }
         
