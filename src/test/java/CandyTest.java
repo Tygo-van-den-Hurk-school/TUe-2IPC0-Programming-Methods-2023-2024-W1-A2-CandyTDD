@@ -49,7 +49,7 @@ public class CandyTest {
      * @param c the amount of candy
      * @param expectedResult what we expect each child to get
      */
-    public void myOwnCheck(long k, long c, long expectedResult){
+    private void myOwnCheck(long k, long c, long expectedResult){
         
         Candy instance = new Candy();
         
@@ -59,7 +59,8 @@ public class CandyTest {
         
         // if it is less then 0, that means devicion was not possible, so we check
         if (result < 0) {
-            assertEquals(expectedResult < 0, result < 0, "possible (0 <= result)");
+            String errorMessage = messageMakerForBelowZero(expectedResult, result, k, c);
+            assertEquals(expectedResult < 0, result < 0, errorMessage);
             return;
         }
         
@@ -70,6 +71,28 @@ public class CandyTest {
         assertEquals(expectedResult, result, "expectedResult == result");
         assertTrue(result <= MAX_VALUE, "range (result <= MAX_VALUE)");
         assertEquals(result * k, c, "quotient (result * k == c)");
+    }
+    
+    private String messageMakerForBelowZero(long expectedResult, long result, long k, long c){
+    
+        // this should be over written. Otherwise, something is very wrong.
+        String messageToReturn = "Error: something is going very wrong";
+        
+        if (!(expectedResult < 0) && result < 0) {
+            messageToReturn = "expectedResult was less then zero, while the actual result was not";
+
+        }
+        
+        if (expectedResult < 0 && !(result < 0)) {
+            messageToReturn = "expectedResult was more then zero, while the actual result was not";
+        }
+        
+        // add a little more information to the errorMessage.
+        String messageToAddPart1 = ", k = " + k + ", c = " + c +", result = " + result;
+        String messageToAddPart2 = ", expectedResult = " + expectedResult;
+        messageToReturn = messageToReturn + messageToAddPart1 + messageToAddPart2;
+        
+        return messageToReturn;
     }
     
     @Test
