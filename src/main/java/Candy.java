@@ -49,7 +49,7 @@ public class Candy {
 
         //first we check if the devision is possible, without remainders
         if (k == 0 && c != 0) {
-            return 0;
+            return -13;
             
         } else if (k == 0 || c % k != 0) {
             return -13;
