@@ -38,18 +38,21 @@ public class Candy {
      *   and otherwise the number of candies each kid gets
      * @pre {@code 0 <= k < 10^18 && 0 <= c < 10^18}
      * @post {@code
-     *   \return < 0 && \not (\exists int q; 0 <= q < 10^18; c == q * k)
+     *   ( \return < 0 && \not (\exists int q; 0 <= q < 10^18; c == q * k) )
      *   ||
-     *   0 <= \return < 10^18 && c == \return * k}
+     *   ( 0 <= \return < 10^18 && c == \return * k} )
      */
     static long divide(long k, long c) {
         
         long result; // value to be returned
         //# BEGIN TODO: Provide method implementation
 
-        //first we check if the devision is possible
-        if (k == 0) {
-            return -1;
+        //first we check if the devision is possible, without remainders
+        if (k == 0 && c != 0) {
+            return 0;
+            
+        } else if (k == 0 || c%k != 0) {
+            return -13;
         }
         
         result = c / k;
