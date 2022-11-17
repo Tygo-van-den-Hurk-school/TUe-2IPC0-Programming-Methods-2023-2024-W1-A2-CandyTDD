@@ -49,16 +49,16 @@ public class CandyTest {
         check(3, 21, true);
         check(3, 24, true);
         check(3, 27, true);
-        check(27, 3, true);
+        check(27, 3, false);
         
         check(4, 16, true);
         check(4, 20, true);
         check(4, 24, true);
         check(4, 28, true);
         check(4, 32, true);
-        check(32, 4, true);
+        check(32, 4, false);
         
-        check(7, 0, true);
+        check(7, 0, false);
         check(0, 6, false);
         check(0, 0, false);
         check(0, 99999999, false);
