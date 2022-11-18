@@ -43,7 +43,6 @@ public class CandyTest {
 
     //# BEGIN TODO: Additional test cases
     private long rangeToTest = 10; // must be lower then: MAX_VALUE. TODO: increase to max on final
-
     
     @Test
     public void testToDevideNumberByNumber() {
