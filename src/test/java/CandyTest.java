@@ -35,7 +35,6 @@ public class CandyTest {
     // Test cases
 
     /** The given example. */
-    private long rangeToTest = 100; // must be lower then: MAX_VALUE
     
     @Test
     public void testDivideGivenExample() {
@@ -43,6 +42,9 @@ public class CandyTest {
     }
 
     //# BEGIN TODO: Additional test cases
+    private long rangeToTest = 10; // must be lower then: MAX_VALUE. TODO: increase to max on final
+
+    
     @Test
     public void testToDevideNumberByNumber() {
         // for every k and every c we will test if the function works.
@@ -75,38 +77,38 @@ public class CandyTest {
     }
     
     /*
-     * since we have now tested all the cases, but moto moto want more, 
-     * we have written these:
+     * since we have now tested all the cases, but moto moto wants more, 
+     * we have written these to satisfie it's appatied:
      */
     
     @Test
     public void extraCaseForMotoMoto0() {
-        check(3, 18, true);
+        check(8, 4, false);
     }
         
     @Test
     public void extraCaseForMotoMoto1() {
-        check(3, 21, true);
+        check(9, 18, true);
     }
         
     @Test
     public void extraCaseForMotoMoto2() {
-        check(3, 27, true);
+        check(0, MAX_VALUE, false);
     }
         
     @Test
     public void extraCaseForMotoMoto3() {
-        check(3, 30, true);
+        check(12, 30, false);
     }
     
     @Test
     public void extraCaseForMotoMoto4() {
-        check(3, 33, true);
+        check(MAX_VALUE, 0, true);
     }
     
     @Test
     public void extraCaseForMotoMoto5() {
-        check(3, 36, true);
+        check(MAX_VALUE, MAX_VALUE, true);
     }
     
     @Test
@@ -116,7 +118,7 @@ public class CandyTest {
     
     @Test
     public void extraCaseForMotoMoto7() {
-        check(0, 0, false);
+        check(0, 0, true);
     }
     
     @Test
@@ -126,7 +128,7 @@ public class CandyTest {
     
     @Test
     public void extraCaseForMotoMoto9() {
-        check(0, 33, false);
+        check(44, 44, true);
     }
         
     @Test
@@ -141,7 +143,7 @@ public class CandyTest {
     
     @Test
     public void extraCaseForMotoMoto12() {
-        check(MAX_VALUE, MAX_VALUE, true);
+        check(MAX_VALUE - 9999, 0, true);
     }
     //# END TODO
 }
