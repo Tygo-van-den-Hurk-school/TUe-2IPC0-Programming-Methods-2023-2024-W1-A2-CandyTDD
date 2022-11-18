@@ -146,7 +146,7 @@ public class CandyTest {
     }
     
     @Test
-    public void extraCaseForMotoMoto14() {
+    public void extraCaseForMotoMoto13() {
         check(3, 15, true);
     }
     
