@@ -42,7 +42,7 @@ public class CandyTest {
     }
 
     //# BEGIN TODO: Additional test cases
-    private long rangeToTest = 10; // must be lower then: MAX_VALUE. TODO: increase to max on final
+    /*private long rangeToTest = 10; // must be lower then: MAX_VALUE. TODO: increase to max on final
     
     @Test
     public void testToDevideNumberByNumber() {
@@ -73,7 +73,7 @@ public class CandyTest {
     @Test
     public void testToDevideZeroByZero() {
         check(0, 0, false);
-    }
+    }*/
     
     /*
      * since we have now tested all the cases, but moto moto wants more, 
@@ -143,6 +143,16 @@ public class CandyTest {
     @Test
     public void extraCaseForMotoMoto12() {
         check(MAX_VALUE - 9999, 0, true);
+    }
+    
+    @Test
+    public void extraCaseForMotoMoto14() {
+        check(3, 15, true);
+    }
+    
+    @Test
+    public void extraCaseForMotoMoto14() {
+        check(5, 25, true);
     }
     //# END TODO
 }

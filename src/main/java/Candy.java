@@ -48,13 +48,19 @@ public class Candy {
         //# BEGIN TODO: Provide method implementation
 
         //first we check if the devision is possible, without remainders
+        if (k == 0 && c == 0) {
+            return 0;
+        }
+        
         if (k == 0 && c != 0) {
-            return -13;
-            
-        } else if (k == 0 || c % k != 0) {
             return -13;
         }
         
+        if (c % k != 0) {
+            return -13;
+        }
+        
+        // if it was not one of the special cases, then we return the devicion.
         result = c / k;
         
         //# END TODO
