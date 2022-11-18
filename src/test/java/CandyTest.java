@@ -133,7 +133,7 @@ public class CandyTest {
         
     @Test
     public void extraCaseForMotoMoto10() {
-        check(MAX_VALUE, 18, true);
+        check(56, MAX_VALUE, false);
     }
     
     @Test
